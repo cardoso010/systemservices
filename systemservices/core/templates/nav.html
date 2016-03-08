@@ -1,0 +1,32 @@
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Service System</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            <li>
+              <a href="{% url 'client_new' %}">Client</a>
+            </li>
+            <li>
+              <a href="{% url 'service_new' %}">Services</a>
+            </li>
+            <li>
+              <a href="{% url 'home' %}">Contract Services</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://builtwithbootstrap.com/" target="_blank">Sing up</a></li>
+            <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Sing in</a></li>
+          </ul>
+
+        </div>
+      </div>
+</div>
