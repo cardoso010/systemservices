@@ -1,0 +1,9 @@
+.servicos
+*.sqlite3
+*pyc
+__pycache__
+staticfiles
+alias_manage.sh
+.idea/
+.env
+*pyc
