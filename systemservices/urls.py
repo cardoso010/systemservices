@@ -20,7 +20,7 @@ from systemservices.core.views import home, client_new, service_new
 
 urlpatterns = [
     url(r'^$', home, name='home'),
-    url(r'^clientnew$', client_new, name='client_new'),
-    url(r'^servicenew$', service_new, name='service_new'),
+    url(r'^client_new$', client_new, name='client_new'),
+    url(r'^service_new$', service_new, name='service_new'),
     url(r'^admin/', admin.site.urls),
 ]
