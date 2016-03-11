@@ -4,8 +4,12 @@ from systemservices.contract.forms import ContractModelForm
 from systemservices.contract.models import ContractedService
 
 
+def list(request):
+    hired = ContractedService.objects.all()
+    return render(request, 'contract/contract_list.html', {'hired': hired})
+
+
 def new(request):
-    form = ContractModelForm()
     if request.method == 'POST':
         form = ContractModelForm(request.POST)
         if form.is_valid():
@@ -13,12 +17,7 @@ def new(request):
             messages.success(request, 'Successfully registered contract.')
         else:
             messages.error(request, 'Error registered client.')
-    return render(request, 'contract/contract_new.html', {'form': form})
-
-
-def list(request):
-    hired = ContractedService.objects.all()
-    return render(request, 'contract/contract_list.html', {'hired': hired})
+    return render(request, 'contract/contract_new.html', {'form': ContractModelForm})
 
 
 def detail(request, pk):

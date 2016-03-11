@@ -1,5 +1,5 @@
-from django.forms import ModelForm, TextInput, EmailInput, NumberInput
-from systemservices.core.models import Client, Service
+from django.forms import ModelForm, TextInput, EmailInput
+from systemservices.client.models import Client
 
 
 class ClientModelForm(ModelForm):
@@ -16,14 +16,4 @@ class ClientModelForm(ModelForm):
             'city': TextInput(attrs={'class': 'form-control'}),
             'email': EmailInput(attrs={'class': 'form-control'}),
             'phone': TextInput(attrs={'class': 'form-control'}),
-        }
-
-
-class ServiceModelForm(ModelForm):
-    class Meta:
-        model = Service
-        exclude = ['created_at']
-        widgets = {
-            'name': TextInput(attrs={'class': 'form-control'}),
-            'value': NumberInput(attrs={'class': 'form-control', 'step': 0.25}),
         }

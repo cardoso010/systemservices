@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'systemservices.core',
     'systemservices.contract.apps.ContractConfig',
+    'systemservices.client.apps.ClientConfig',
+    'systemservices.services.apps.ServicesConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
