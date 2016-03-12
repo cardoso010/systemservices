@@ -11,6 +11,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Value</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +19,7 @@
                     <tr>
                         <td><a href="{% url 'services:detail' pk=service.pk %}">{{ service.name }}</a></td>
                         <td>{{ service.value }}</td>
+                        <td><a href="{% url 'services:remove' pk=service.pk %}"><button class="btn btn-sm btn-danger">Delete</button></a></td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -16,6 +16,7 @@
                     <th>City</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                         <td>{{ client.city }}</td>
                         <td>{{ client.email }}</td>
                         <td>{{ client.phone }}</td>
+                        <td><a href="{% url 'client:remove' pk=client.pk %}"><button class="btn btn-sm btn-danger">Delete</button></a></td>
                     </tr>
                 {% endfor %}
             </tbody>

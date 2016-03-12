@@ -31,3 +31,9 @@ def detail(request, pk):
             messages.error(request, 'Error updated service.')
     form = ServiceModelForm(instance=form)
     return render(request, 'service/service_detail.html', {'form': form})
+
+
+def remove(request, pk):
+    Service.objects.get(pk=pk).delete()
+    services = Service.objects.all()
+    return render(request, 'service/service_list.html', {'services': services})

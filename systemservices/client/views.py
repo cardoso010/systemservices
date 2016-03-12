@@ -31,3 +31,9 @@ def detail(request, pk):
             messages.error(request, 'Error updated client.')
     form = ClientModelForm(instance=form)
     return render(request, 'client/client_detail.html', {'form': form})
+
+
+def remove(request, pk):
+    Client.objects.get(pk=pk).delete()
+    clients = Client.objects.all()
+    return render(request, 'client/client_list.html', {'clients': clients})
