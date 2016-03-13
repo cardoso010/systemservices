@@ -21,8 +21,7 @@ class Product(models.Model):
 
 class Sale(models.Model):
     product = models.ManyToManyField('product.Product')
-    client = models.ManyToManyField('client.Client', blank=True, null=True)
-    quantity = models.IntegerField()
+    client = models.ForeignKey('client.Client', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
