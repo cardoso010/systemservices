@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^client/', include('systemservices.client.urls', namespace='client')),
     url(r'^services/', include('systemservices.services.urls', namespace='services')),
     url(r'^contract/', include('systemservices.contract.urls', namespace='contract')),
+    url(r'^product/', include('systemservices.product.urls', namespace='product')),
     url(r'^admin/', admin.site.urls),
 ]

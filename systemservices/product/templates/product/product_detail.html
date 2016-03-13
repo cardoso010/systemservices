@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-header">
+    <h2>Update Product</h2>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="well bs-component">
+            {% if messages %}
+                {% include 'messages.html' with messages=messages %}
+            {% endif %}
+            <form method="POST" class="form-horizontal">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <input type="submit" value="Submit" class="btn btn-success">
+            <input type="reset" value="Clear" class="btn btn-warning">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

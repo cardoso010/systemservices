@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'systemservices.contract.apps.ContractConfig',
     'systemservices.client.apps.ClientConfig',
     'systemservices.services.apps.ServicesConfig',
+    'systemservices.product.apps.ProductConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

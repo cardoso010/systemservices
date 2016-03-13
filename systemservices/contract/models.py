@@ -4,7 +4,7 @@ from django.db import models
 class ContractedService(models.Model):
     client = models.ForeignKey('client.Client')
     service = models.ForeignKey('services.Service')
-    value = models.DecimalField(decimal_places=2, max_digits=20, null=True, blank=True)
+    value = models.DecimalField(decimal_places=3, max_digits=20, null=True, blank=True)
     start = models.DateField()
     end = models.DateField()
 

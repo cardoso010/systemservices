@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-header">
+    <h2>Products</h2>
+    <a href="{% url 'product:new' %}"><button class="btn btn-default">Create</button></a>
+</div>
+<div class="row">
+    <div class="well bs-component">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Value</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td><a href="{% url 'product:detail' pk=product.pk %}">{{ product.name }}</a></td>
+                        <td>{{ product.brand }}</td>
+                        <td>{{ product.value }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td><a href="{% url 'product:remove' pk=product.pk %}"><button class="btn btn-sm btn-danger">Delete</button></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
